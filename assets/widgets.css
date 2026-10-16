@@ -1,0 +1,474 @@
+.darkso-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.darkso-toggle--no-stroke {
+    border: 0 !important;
+    box-shadow: none;
+}
+
+.darkso-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.darkso-toggle--no-outline,
+.darkso-toggle--no-outline:focus,
+.darkso-toggle--no-outline:focus-visible {
+    outline: none !important;
+}
+
+.darkso-toggle:hover {
+    transform: scale(1.06);
+}
+
+.darkso-toggle__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.45s ease;
+}
+
+.darkso-toggle__icon i,
+.darkso-toggle__icon svg {
+    display: block;
+}
+
+.darkso-toggle__icon--dark {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-toggle--fade .darkso-toggle__icon--light {
+    opacity: 0;
+}
+
+html.darkso-dark .darkso-toggle--fade .darkso-toggle__icon--dark {
+    opacity: 1;
+}
+
+.darkso-toggle--rotate .darkso-toggle__icon--light {
+    transform: rotate(0deg) scale(1);
+}
+
+.darkso-toggle--rotate .darkso-toggle__icon--dark {
+    transform: rotate(-90deg) scale(0.4);
+}
+
+html.darkso-dark .darkso-toggle--rotate .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.4);
+}
+
+html.darkso-dark .darkso-toggle--rotate .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.darkso-toggle--flip {
+    perspective: 160px;
+}
+
+.darkso-toggle--flip .darkso-toggle__icon {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.darkso-toggle--flip .darkso-toggle__icon--light {
+    transform: rotateY(0deg);
+}
+
+.darkso-toggle--flip .darkso-toggle__icon--dark {
+    transform: rotateY(-180deg);
+}
+
+html.darkso-dark .darkso-toggle--flip .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+html.darkso-dark .darkso-toggle--flip .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.darkso-toggle--scale .darkso-toggle__icon--light {
+    transform: scale(1);
+}
+
+.darkso-toggle--scale .darkso-toggle__icon--dark {
+    transform: scale(0.2);
+}
+
+html.darkso-dark .darkso-toggle--scale .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+html.darkso-dark .darkso-toggle--scale .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.darkso-image {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+    vertical-align: top;
+}
+
+.darkso-image img,
+.darkso-image__item {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.darkso-image__light {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.darkso-image__dark {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-image__light {
+    opacity: 0;
+    visibility: hidden;
+}
+
+html.darkso-dark .darkso-image__dark {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.darkso-swap--stack .darkso-swap__dark {
+    display: none !important;
+}
+
+html.darkso-dark .darkso-swap--stack .darkso-swap__light {
+    display: none !important;
+}
+
+html.darkso-dark .darkso-swap--stack .darkso-swap__dark {
+    display: block !important;
+}
+
+.darkso-heading.darkso-swap--stack {
+    margin: 0;
+}
+
+.darkso-heading.darkso-swap--stack .darkso-swap__light,
+.darkso-heading.darkso-swap--stack .darkso-swap__dark {
+    display: block;
+}
+
+html.darkso-dark .darkso-heading.darkso-swap--stack .darkso-swap__light {
+    display: none !important;
+}
+
+html.darkso-dark .darkso-heading.darkso-swap--stack .darkso-swap__dark {
+    display: inline !important;
+}
+
+.darkso-heading-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.darkso-icon-wrap {
+    display: block;
+}
+
+.darkso-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.darkso-icon__light,
+.darkso-icon__dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.darkso-swap--overlay .darkso-swap__dark {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-swap--overlay .darkso-swap__light {
+    opacity: 0;
+    visibility: hidden;
+}
+
+html.darkso-dark .darkso-swap--overlay .darkso-swap__dark {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.darkso-icon svg,
+.darkso-icon i {
+    display: block;
+    width: 1em;
+    height: 1em;
+    color: inherit;
+    fill: currentColor;
+}
+
+.darkso-menu-empty {
+    padding: 12px 14px;
+    border: 1px dashed #c3c4c7;
+    color: #646970;
+    font-size: 13px;
+}
+
+.darkso-menu-swap {
+    width: 100%;
+}
+
+.darkso-menu {
+    display: block;
+}
+
+.darkso-menu__list,
+.darkso-menu .sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.darkso-menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.darkso-menu--vertical .darkso-menu__list {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.darkso-menu__list > li {
+    position: relative;
+    margin: 0;
+}
+
+.darkso-menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.darkso-menu--pointer-underline .darkso-menu__list > li > a {
+    position: relative;
+}
+
+.darkso-menu--pointer-underline .darkso-menu__list > li > a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.darkso-menu--pointer-underline .darkso-menu__list > li > a:hover:after,
+.darkso-menu--pointer-underline .current-menu-item > a:after {
+    transform: scaleX(1);
+}
+
+.darkso-menu--pointer-overline .darkso-menu__list > li > a {
+    position: relative;
+}
+
+.darkso-menu--pointer-overline .darkso-menu__list > li > a:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.darkso-menu--pointer-overline .darkso-menu__list > li > a:hover:before,
+.darkso-menu--pointer-overline .current-menu-item > a:before {
+    transform: scaleX(1);
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a {
+    position: relative;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:before,
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:before {
+    top: 0;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:after {
+    bottom: 0;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:hover:before,
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:hover:after,
+.darkso-menu--pointer-double-line .current-menu-item > a:before,
+.darkso-menu--pointer-double-line .current-menu-item > a:after {
+    transform: scaleX(1);
+}
+
+.darkso-menu--pointer-framed .darkso-menu__list > li > a {
+    border: 1px solid transparent;
+}
+
+.darkso-menu--pointer-framed .darkso-menu__list > li > a:hover,
+.darkso-menu--pointer-framed .current-menu-item > a {
+    border-color: currentColor;
+}
+
+.darkso-menu--pointer-background .darkso-menu__list > li > a {
+    border-radius: 4px;
+}
+
+.darkso-menu--pointer-text .darkso-menu__list > li > a:hover,
+.darkso-menu--pointer-text .current-menu-item > a {
+    transform: scale(1.08);
+}
+
+.darkso-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    z-index: 30;
+    padding: 8px 0;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.darkso-menu .sub-menu a {
+    display: block;
+    padding: 8px 16px;
+    white-space: nowrap;
+}
+
+.darkso-menu li:hover > .sub-menu,
+.darkso-menu li:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+}
+
+.darkso-menu .sub-menu .sub-menu {
+    top: 0;
+    inset-inline-start: 100%;
+}
+
+.darkso-menu--vertical .sub-menu {
+    position: relative;
+    top: 0;
+    inset-inline-start: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    min-width: 0;
+    padding-inline-start: 16px;
+}
+
+.darkso-notice {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    z-index: 999999;
+    max-width: min(92vw, 420px);
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.darkso-notice--show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+html.darkso-dark .darkso-notice {
+    background: #f3f3f3;
+    color: #111;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.45s;
+}

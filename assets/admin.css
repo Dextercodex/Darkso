@@ -1,0 +1,21 @@
+.darkso-wrap {
+    max-width: 980px;
+}
+
+.darkso-note {
+    min-width: 180px;
+}
+
+.darkso-table {
+    margin: 16px 0;
+}
+
+.darkso-table th,
+.darkso-table td {
+    padding: 10px 12px;
+    vertical-align: middle;
+}
+
+.darkso-wrap .wp-picker-container {
+    display: inline-block;
+}
