@@ -1,0 +1,118 @@
+.darkso-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    line-height: 1;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.darkso-toggle:hover {
+    transform: scale(1.06);
+}
+
+.darkso-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.darkso-toggle__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.45s ease;
+}
+
+.darkso-toggle__icon i,
+.darkso-toggle__icon svg {
+    display: block;
+}
+
+.darkso-toggle__icon--dark {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-toggle--fade .darkso-toggle__icon--light {
+    opacity: 0;
+}
+
+html.darkso-dark .darkso-toggle--fade .darkso-toggle__icon--dark {
+    opacity: 1;
+}
+
+.darkso-toggle--rotate .darkso-toggle__icon--light {
+    transform: rotate(0deg) scale(1);
+}
+
+.darkso-toggle--rotate .darkso-toggle__icon--dark {
+    transform: rotate(-90deg) scale(0.4);
+}
+
+html.darkso-dark .darkso-toggle--rotate .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.4);
+}
+
+html.darkso-dark .darkso-toggle--rotate .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.darkso-toggle--flip {
+    perspective: 160px;
+}
+
+.darkso-toggle--flip .darkso-toggle__icon {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.darkso-toggle--flip .darkso-toggle__icon--light {
+    transform: rotateY(0deg);
+}
+
+.darkso-toggle--flip .darkso-toggle__icon--dark {
+    transform: rotateY(-180deg);
+}
+
+html.darkso-dark .darkso-toggle--flip .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+html.darkso-dark .darkso-toggle--flip .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.darkso-toggle--scale .darkso-toggle__icon--light {
+    transform: scale(1);
+}
+
+.darkso-toggle--scale .darkso-toggle__icon--dark {
+    transform: scale(0.2);
+}
+
+html.darkso-dark .darkso-toggle--scale .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+html.darkso-dark .darkso-toggle--scale .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.45s;
+}

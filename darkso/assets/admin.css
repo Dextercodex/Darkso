@@ -1,0 +1,457 @@
+.darkso-app {
+    --dk-primary: #6d5efc;
+    --dk-primary-dark: #4f43d6;
+    --dk-bg: #f6f7fb;
+    --dk-card: #ffffff;
+    --dk-line: #e4e6ef;
+    --dk-text: #1f2333;
+    --dk-muted: #6b7088;
+    max-width: 1040px;
+    margin: 20px 20px 0 0;
+    color: var(--dk-text);
+    font-size: 14px;
+}
+
+.darkso-app * {
+    box-sizing: border-box;
+}
+
+/* Hero */
+.darkso-hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 28px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #1b1740 0%, #3a2fa8 55%, #6d5efc 100%);
+    color: #ffffff;
+    box-shadow: 0 14px 34px rgba(79, 67, 214, 0.28);
+}
+
+.darkso-hero__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.darkso-hero__text {
+    flex: 1 1 260px;
+}
+
+.darkso-hero__text h2 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.darkso-hero__text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+}
+
+.darkso-badge {
+    display: inline-block;
+    margin-inline-start: 8px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.darkso-hero__stats {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.darkso-hero__stats span {
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.14);
+    font-size: 13px;
+}
+
+.darkso-hero__stats strong {
+    font-size: 18px;
+    margin-inline-end: 4px;
+}
+
+/* Toast */
+.darkso-toast {
+    margin: 16px 0 0;
+    padding: 12px 18px;
+    border: 1px solid #b7e4c7;
+    border-radius: 12px;
+    background: #e9f9ef;
+    color: #14532d;
+    font-weight: 600;
+}
+
+/* Tabs */
+.darkso-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 16px;
+    padding: 6px;
+    border: 1px solid var(--dk-line);
+    border-radius: 14px;
+    background: var(--dk-card);
+}
+
+.darkso-tab {
+    flex: 1 1 120px;
+    margin: 0;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--dk-muted);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.darkso-tab:hover {
+    background: var(--dk-bg);
+    color: var(--dk-text);
+}
+
+.darkso-tab.is-active {
+    background: var(--dk-primary);
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(109, 94, 252, 0.35);
+}
+
+/* Panels */
+.darkso-panel {
+    display: none;
+}
+
+.darkso-panel.is-active {
+    display: block;
+    animation: darksoAdminFade 0.25s ease;
+}
+
+@keyframes darksoAdminFade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.darkso-card-admin {
+    padding: 24px;
+    border: 1px solid var(--dk-line);
+    border-radius: 16px;
+    background: var(--dk-card);
+}
+
+.darkso-card-admin__head h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.darkso-card-admin__head p {
+    margin: 0 0 18px;
+    color: var(--dk-muted);
+    line-height: 1.9;
+}
+
+/* Table */
+.darkso-tablewrap {
+    overflow-x: auto;
+}
+
+.darkso-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.darkso-table thead th {
+    padding: 0 12px 4px;
+    color: var(--dk-muted);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.darkso-table tbody td {
+    padding: 12px;
+    border-block: 1px solid var(--dk-line);
+    background: var(--dk-bg);
+    vertical-align: middle;
+}
+
+.darkso-table tbody td:first-child {
+    border-inline-start: 1px solid var(--dk-line);
+    border-radius: 0 12px 12px 0;
+}
+
+.darkso-table tbody td:last-child {
+    border-inline-end: 1px solid var(--dk-line);
+    border-radius: 12px 0 0 12px;
+}
+
+.darkso-note {
+    width: 100%;
+    min-width: 180px;
+}
+
+.darkso-app .wp-picker-container {
+    display: inline-block;
+}
+
+.darkso-app .wp-picker-container .wp-color-result.button {
+    margin: 0 0 0 6px;
+}
+
+.darkso-preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.darkso-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 34px;
+    border: 1px solid rgba(120, 120, 140, 0.35);
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.darkso-arrow {
+    color: var(--dk-muted);
+}
+
+.darkso-actions {
+    margin: 14px 0 0;
+}
+
+.darkso-tip {
+    margin-top: 18px;
+    padding: 12px 16px;
+    border-inline-start: 4px solid var(--dk-primary);
+    border-radius: 10px;
+    background: #f1efff;
+    line-height: 1.9;
+}
+
+/* Messages */
+.darkso-fields {
+    display: grid;
+    gap: 16px;
+}
+
+.darkso-field-admin {
+    display: grid;
+    gap: 6px;
+}
+
+.darkso-field-admin span {
+    font-weight: 600;
+}
+
+.darkso-field-admin input {
+    width: 100%;
+    max-width: 520px;
+}
+
+/* Widgets grid */
+.darkso-widgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.darkso-widget-card {
+    padding: 18px;
+    border: 1px solid var(--dk-line);
+    border-radius: 14px;
+    background: var(--dk-bg);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.darkso-widget-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--dk-primary);
+}
+
+.darkso-widget-card .dashicons {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: #e9e6ff;
+    color: var(--dk-primary-dark);
+    font-size: 20px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.darkso-widget-card h4 {
+    margin: 0 0 4px;
+    font-size: 14px;
+}
+
+.darkso-widget-card p {
+    margin: 0;
+    color: var(--dk-muted);
+    line-height: 1.8;
+}
+
+/* Guide */
+.darkso-guide details {
+    margin-bottom: 10px;
+    border: 1px solid var(--dk-line);
+    border-radius: 12px;
+    background: var(--dk-bg);
+}
+
+.darkso-guide summary {
+    padding: 14px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.darkso-guide details[open] summary {
+    border-bottom: 1px solid var(--dk-line);
+}
+
+.darkso-guide details > :not(summary) {
+    margin-inline: 18px;
+}
+
+.darkso-guide details > :last-child {
+    margin-bottom: 16px;
+}
+
+.darkso-guide ol,
+.darkso-guide ul {
+    margin-top: 14px;
+    padding-inline-start: 22px;
+    line-height: 2;
+}
+
+.darkso-guide p {
+    line-height: 2;
+}
+
+.darkso-classes {
+    width: calc(100% - 36px);
+    margin-top: 14px;
+    border-collapse: collapse;
+}
+
+.darkso-classes td {
+    padding: 10px 6px;
+    border-bottom: 1px dashed var(--dk-line);
+    vertical-align: top;
+    line-height: 1.9;
+}
+
+.darkso-classes td:first-child {
+    white-space: nowrap;
+}
+
+.darkso-muted {
+    color: var(--dk-muted);
+}
+
+.darkso-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    direction: ltr;
+}
+
+.darkso-code code {
+    padding: 3px 9px;
+    border-radius: 8px;
+    background: #e9e6ff;
+    color: var(--dk-primary-dark);
+    font-weight: 700;
+}
+
+.darkso-copy {
+    padding: 2px 9px;
+    border: 1px solid var(--dk-line);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--dk-muted);
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.darkso-copy:hover {
+    border-color: var(--dk-primary);
+    color: var(--dk-primary);
+}
+
+.darkso-copy.is-done {
+    border-color: #16a34a;
+    color: #16a34a;
+}
+
+/* Save bar */
+.darkso-savebar {
+    position: sticky;
+    bottom: 12px;
+    z-index: 20;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 12px 18px;
+    border: 1px solid var(--dk-line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 28px rgba(31, 35, 51, 0.12);
+    backdrop-filter: blur(6px);
+}
+
+.darkso-savebar__hint {
+    color: var(--dk-muted);
+}
+
+.darkso-savebar .button-primary {
+    border-color: var(--dk-primary-dark);
+    background: var(--dk-primary);
+}
+
+.darkso-savebar .button-primary:hover {
+    background: var(--dk-primary-dark);
+}
+
+@media (max-width: 782px) {
+    .darkso-app {
+        margin-right: 10px;
+    }
+
+    .darkso-card-admin {
+        padding: 16px;
+    }
+}

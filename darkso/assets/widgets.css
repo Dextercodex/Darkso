@@ -1,0 +1,1378 @@
+/* =========================================================
+   Darkso 5.1 — widgets.css
+   ========================================================= */
+
+/* ---------- Toggle ---------- */
+.darkso-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.darkso-toggle--no-stroke {
+    border: 0 !important;
+    box-shadow: none;
+}
+
+.darkso-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.darkso-toggle--no-outline,
+.darkso-toggle--no-outline:focus,
+.darkso-toggle--no-outline:focus-visible {
+    outline: none !important;
+}
+
+.darkso-toggle:hover {
+    transform: scale(1.06);
+}
+
+.darkso-toggle__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.45s ease;
+}
+
+.darkso-toggle__icon i,
+.darkso-toggle__icon svg {
+    display: block;
+}
+
+.darkso-toggle__icon--dark {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-toggle--fade .darkso-toggle__icon--light {
+    opacity: 0;
+}
+
+html.darkso-dark .darkso-toggle--fade .darkso-toggle__icon--dark {
+    opacity: 1;
+}
+
+.darkso-toggle--rotate .darkso-toggle__icon--light {
+    transform: rotate(0deg) scale(1);
+}
+
+.darkso-toggle--rotate .darkso-toggle__icon--dark {
+    transform: rotate(-90deg) scale(0.4);
+}
+
+html.darkso-dark .darkso-toggle--rotate .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.4);
+}
+
+html.darkso-dark .darkso-toggle--rotate .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.darkso-toggle--flip {
+    perspective: 160px;
+}
+
+.darkso-toggle--flip .darkso-toggle__icon {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.darkso-toggle--flip .darkso-toggle__icon--light {
+    transform: rotateY(0deg);
+}
+
+.darkso-toggle--flip .darkso-toggle__icon--dark {
+    transform: rotateY(-180deg);
+}
+
+html.darkso-dark .darkso-toggle--flip .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+html.darkso-dark .darkso-toggle--flip .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.darkso-toggle--scale .darkso-toggle__icon--light {
+    transform: scale(1);
+}
+
+.darkso-toggle--scale .darkso-toggle__icon--dark {
+    transform: scale(0.2);
+}
+
+html.darkso-dark .darkso-toggle--scale .darkso-toggle__icon--light {
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+html.darkso-dark .darkso-toggle--scale .darkso-toggle__icon--dark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ---------- Image ---------- */
+.darkso-image {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+    vertical-align: top;
+}
+
+.darkso-image img,
+.darkso-image__item {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.darkso-image__light {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.darkso-image__dark {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-image__light {
+    opacity: 0;
+    visibility: hidden;
+}
+
+html.darkso-dark .darkso-image__dark {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ---------- Swap (text / heading) ---------- */
+.darkso-swap--stack .darkso-swap__dark {
+    display: none !important;
+}
+
+html.darkso-dark .darkso-swap--stack .darkso-swap__light {
+    display: none !important;
+}
+
+html.darkso-dark .darkso-swap--stack .darkso-swap__dark {
+    display: block !important;
+}
+
+.darkso-heading.darkso-swap--stack {
+    margin: 0;
+}
+
+.darkso-heading.darkso-swap--stack .darkso-swap__light,
+.darkso-heading.darkso-swap--stack .darkso-swap__dark {
+    display: block;
+}
+
+html.darkso-dark .darkso-heading.darkso-swap--stack .darkso-swap__light {
+    display: none !important;
+}
+
+html.darkso-dark .darkso-heading.darkso-swap--stack .darkso-swap__dark {
+    display: inline !important;
+}
+
+.darkso-heading-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- Icon ---------- */
+.darkso-icon-wrap {
+    display: block;
+}
+
+.darkso-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.darkso-icon__light,
+.darkso-icon__dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.darkso-swap--overlay .darkso-swap__dark {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html.darkso-dark .darkso-swap--overlay .darkso-swap__light {
+    opacity: 0;
+    visibility: hidden;
+}
+
+html.darkso-dark .darkso-swap--overlay .darkso-swap__dark {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.darkso-icon svg,
+.darkso-icon i {
+    display: block;
+    width: 1em;
+    height: 1em;
+    color: inherit;
+    fill: currentColor;
+}
+
+/* ---------- Menu ---------- */
+.darkso-menu-empty {
+    padding: 12px 14px;
+    border: 1px dashed #c3c4c7;
+    color: #646970;
+    font-size: 13px;
+}
+
+.darkso-menu-swap {
+    width: 100%;
+}
+
+.darkso-menu {
+    display: block;
+}
+
+.darkso-menu__list,
+.darkso-menu .sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.darkso-menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.darkso-menu--vertical .darkso-menu__list {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.darkso-menu__list > li {
+    position: relative;
+    margin: 0;
+}
+
+.darkso-menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.darkso-menu--pointer-underline .darkso-menu__list > li > a {
+    position: relative;
+}
+
+.darkso-menu--pointer-underline .darkso-menu__list > li > a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.darkso-menu--pointer-underline .darkso-menu__list > li > a:hover:after,
+.darkso-menu--pointer-underline .current-menu-item > a:after {
+    transform: scaleX(1);
+}
+
+.darkso-menu--pointer-overline .darkso-menu__list > li > a {
+    position: relative;
+}
+
+.darkso-menu--pointer-overline .darkso-menu__list > li > a:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.darkso-menu--pointer-overline .darkso-menu__list > li > a:hover:before,
+.darkso-menu--pointer-overline .current-menu-item > a:before {
+    transform: scaleX(1);
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a {
+    position: relative;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:before,
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:before {
+    top: 0;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:after {
+    bottom: 0;
+}
+
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:hover:before,
+.darkso-menu--pointer-double-line .darkso-menu__list > li > a:hover:after,
+.darkso-menu--pointer-double-line .current-menu-item > a:before,
+.darkso-menu--pointer-double-line .current-menu-item > a:after {
+    transform: scaleX(1);
+}
+
+.darkso-menu--pointer-framed .darkso-menu__list > li > a {
+    border: 1px solid transparent;
+}
+
+.darkso-menu--pointer-framed .darkso-menu__list > li > a:hover,
+.darkso-menu--pointer-framed .current-menu-item > a {
+    border-color: currentColor;
+}
+
+.darkso-menu--pointer-background .darkso-menu__list > li > a {
+    border-radius: 4px;
+}
+
+.darkso-menu--pointer-text .darkso-menu__list > li > a:hover,
+.darkso-menu--pointer-text .current-menu-item > a {
+    transform: scale(1.08);
+}
+
+.darkso-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    z-index: 30;
+    padding: 8px 0;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.darkso-menu .sub-menu a {
+    display: block;
+    padding: 8px 16px;
+    white-space: nowrap;
+}
+
+.darkso-menu li:hover > .sub-menu,
+.darkso-menu li:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+}
+
+.darkso-menu .sub-menu .sub-menu {
+    top: 0;
+    inset-inline-start: 100%;
+}
+
+.darkso-menu--vertical .sub-menu {
+    position: relative;
+    top: 0;
+    inset-inline-start: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    min-width: 0;
+    padding-inline-start: 16px;
+}
+
+/* ---------- Notice ---------- */
+.darkso-notice {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    z-index: 999999;
+    max-width: min(92vw, 420px);
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.darkso-notice--show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+html.darkso-dark .darkso-notice {
+    background: #f3f3f3;
+    color: #111;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.45s;
+}
+
+/* =========================================================
+   5.1 — کلاس‌های Lightshow / Darkshow
+   Lightshow: فقط در حالت روشن نمایش داده می‌شود.
+   Darkshow : فقط در حالت دارک نمایش داده می‌شود.
+   (در ویرایشگر المنتور هر دو دیده می‌شوند تا قابل ویرایش باشند.)
+   ========================================================= */
+html:not(.darkso-dark) body:not(.elementor-editor-active) .Darkshow,
+html:not(.darkso-dark) body:not(.elementor-editor-active) .darkshow {
+    display: none !important;
+}
+
+html.darkso-dark body:not(.elementor-editor-active) .Lightshow,
+html.darkso-dark body:not(.elementor-editor-active) .lightshow {
+    display: none !important;
+}
+
+body.elementor-editor-active .Darkshow,
+body.elementor-editor-active .darkshow {
+    outline: 1px dashed rgba(139, 92, 246, 0.65);
+    outline-offset: -1px;
+}
+
+body.elementor-editor-active .Lightshow,
+body.elementor-editor-active .lightshow {
+    outline: 1px dashed rgba(245, 158, 11, 0.65);
+    outline-offset: -1px;
+}
+
+/* =========================================================
+   5.1 — متغیرهای مشترک ویجت‌های جدید
+   ========================================================= */
+:root {
+    --dk-card-bg: #ffffff;
+    --dk-card-border: #e5e7eb;
+    --dk-title: #111827;
+    --dk-text: #4b5563;
+    --dk-meta: #6b7280;
+    --dk-accent: #2563eb;
+    --dk-accent-text: #ffffff;
+    --dk-soft: #f1f5f9;
+    --dk-ok: #15803d;
+    --dk-err: #b91c1c;
+}
+
+html.darkso-dark {
+    --dk-card-bg: #1c1c1e;
+    --dk-card-border: #2f2f33;
+    --dk-title: #f4f4f5;
+    --dk-text: #b4b4bb;
+    --dk-meta: #8e8e96;
+    --dk-accent: #60a5fa;
+    --dk-accent-text: #0b1220;
+    --dk-soft: #27272a;
+    --dk-ok: #4ade80;
+    --dk-err: #f87171;
+}
+
+/* ---------- Grid ---------- */
+.darkso-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--darkso-cols, 3), minmax(0, 1fr));
+    gap: var(--darkso-gap, 24px);
+}
+
+.darkso-grid__item {
+    min-width: 0;
+}
+
+.darkso-grid--equal .darkso-grid__item > .darkso-card,
+.darkso-grid--equal .darkso-grid__item > .darkso-loop-template {
+    height: 100%;
+}
+
+/* ---------- Card ---------- */
+.darkso-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background: var(--dk-card-bg);
+    border: 1px solid var(--dk-card-border);
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.darkso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+}
+
+.darkso-card__media {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--dk-soft);
+}
+
+.darkso-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.darkso-card:hover .darkso-card__media img {
+    transform: scale(1.05);
+}
+
+.darkso-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding: 18px 20px 20px;
+}
+
+.darkso-card__term {
+    align-self: flex-start;
+    padding: 3px 12px;
+    border-radius: 999px;
+    background: var(--dk-soft);
+    color: var(--dk-accent);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.darkso-card__title {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--dk-title);
+}
+
+.darkso-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.darkso-card__title a:hover {
+    color: var(--dk-accent);
+}
+
+.darkso-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 13px;
+    color: var(--dk-meta);
+}
+
+.darkso-card__excerpt {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--dk-text);
+}
+
+.darkso-card__btn {
+    align-self: flex-start;
+    display: inline-block;
+    margin-top: auto;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: var(--dk-accent);
+    color: var(--dk-accent-text);
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.darkso-card__btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.darkso-loop-template {
+    height: 100%;
+}
+
+/* ---------- Post layouts ---------- */
+.darkso-posts--list {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.darkso-posts--list .darkso-card {
+    flex-direction: row;
+}
+
+.darkso-posts--list .darkso-card__media {
+    flex: 0 0 38%;
+    aspect-ratio: auto;
+    min-height: 100%;
+}
+
+.darkso-posts--minimal .darkso-card {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--dk-card-border);
+    border-radius: 0;
+}
+
+.darkso-posts--minimal .darkso-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.darkso-posts--minimal .darkso-card__body {
+    padding-inline: 0;
+}
+
+.darkso-posts--overlay .darkso-card {
+    min-height: 340px;
+    border: 0;
+    background: #0b0b0d;
+}
+
+.darkso-posts--overlay .darkso-card__media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+}
+
+.darkso-posts--overlay .darkso-card__media:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 8, 10, 0.9), rgba(8, 8, 10, 0.1) 65%);
+}
+
+.darkso-posts--overlay .darkso-card__body {
+    position: relative;
+    z-index: 2;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+.darkso-posts--overlay .darkso-card__title,
+.darkso-posts--overlay .darkso-card__excerpt,
+.darkso-posts--overlay .darkso-card__meta {
+    color: #f4f4f5;
+}
+
+@media (max-width: 640px) {
+    .darkso-posts--list .darkso-card {
+        flex-direction: column;
+    }
+
+    .darkso-posts--list .darkso-card__media {
+        flex: none;
+        aspect-ratio: 16 / 10;
+        min-height: 0;
+    }
+}
+
+/* ---------- Pagination ---------- */
+.darkso-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 32px;
+}
+
+.darkso-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--dk-card-border);
+    border-radius: 10px;
+    background: var(--dk-card-bg);
+    color: var(--dk-text);
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.darkso-pagination a.page-numbers:hover {
+    border-color: var(--dk-accent);
+    color: var(--dk-accent);
+}
+
+.darkso-pagination .page-numbers.current {
+    background: var(--dk-accent);
+    border-color: var(--dk-accent);
+    color: var(--dk-accent-text);
+}
+
+.darkso-pagination .page-numbers.dots {
+    border-color: transparent;
+    background: transparent;
+}
+
+/* ---------- Carousel ---------- */
+.darkso-carousel {
+    position: relative;
+}
+
+.darkso-carousel__viewport {
+    overflow-x: auto;
+    padding: 10px 0 24px;
+    margin: -10px 0 -24px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
+}
+
+.darkso-carousel__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.darkso-carousel__track {
+    display: flex;
+    gap: var(--darkso-gap, 24px);
+}
+
+.darkso-carousel__slide {
+    flex: 0 0 calc((100% - (var(--darkso-cols, 3) - 1) * var(--darkso-gap, 24px)) / var(--darkso-cols, 3));
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.darkso-carousel__slide > .darkso-card {
+    height: 100%;
+}
+
+.darkso-carousel__nav {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: calc(50% - 12px);
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--dk-card-border);
+    border-radius: 50%;
+    background: var(--dk-card-bg);
+    color: var(--dk-title);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.darkso-carousel__nav:hover {
+    background: var(--dk-accent);
+    color: var(--dk-accent-text);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.darkso-carousel__prev {
+    inset-inline-start: -14px;
+}
+
+.darkso-carousel__next {
+    inset-inline-end: -14px;
+}
+
+html[dir="rtl"] .darkso-carousel__nav svg,
+body.rtl .darkso-carousel__nav svg {
+    transform: scaleX(-1);
+}
+
+.darkso-carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 34px;
+}
+
+.darkso-carousel__dot {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--dk-card-border);
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.darkso-carousel__dot.is-active {
+    width: 26px;
+    background: var(--dk-accent);
+}
+
+@media (max-width: 640px) {
+    .darkso-carousel__prev {
+        inset-inline-start: 4px;
+    }
+
+    .darkso-carousel__next {
+        inset-inline-end: 4px;
+    }
+}
+
+/* ---------- Icon box ---------- */
+.darkso-iconbox {
+    display: flex;
+    gap: 18px;
+    padding: 28px;
+    border: 1px solid var(--dk-card-border);
+    border-radius: 16px;
+    background: var(--dk-card-bg);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.darkso-iconbox--top {
+    flex-direction: column;
+}
+
+.darkso-iconbox--start {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.darkso-iconbox--end {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+.darkso-iconbox--lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.darkso-iconbox:hover {
+    border-color: var(--dk-accent);
+}
+
+.darkso-iconbox__icon {
+    position: relative;
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--dk-soft);
+    color: var(--dk-accent);
+    font-size: 28px;
+    line-height: 1;
+}
+
+.darkso-iconbox__icon .darkso-swap__light,
+.darkso-iconbox__icon .darkso-swap__dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.darkso-iconbox__icon svg,
+.darkso-iconbox__icon i {
+    display: block;
+    width: 1em;
+    height: 1em;
+    color: inherit;
+    fill: currentColor;
+}
+
+.darkso-iconbox__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.darkso-iconbox__title {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--dk-title);
+}
+
+.darkso-iconbox__desc {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--dk-text);
+}
+
+.darkso-iconbox__btn {
+    align-self: flex-start;
+    margin-top: 6px;
+    color: var(--dk-accent);
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+/* ---------- Portfolio ---------- */
+.darkso-portfolio__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 26px;
+}
+
+.darkso-portfolio__filter {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 8px 20px;
+    border: 1px solid var(--dk-card-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--dk-text);
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.darkso-portfolio__filter:hover {
+    border-color: var(--dk-accent);
+    color: var(--dk-accent);
+}
+
+.darkso-portfolio__filter.is-active {
+    background: var(--dk-accent);
+    border-color: var(--dk-accent);
+    color: var(--dk-accent-text);
+}
+
+.darkso-portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--darkso-cols, 3), minmax(0, 1fr));
+    gap: var(--darkso-gap, 20px);
+}
+
+.darkso-portfolio--masonry .darkso-portfolio__grid {
+    display: block;
+    column-count: var(--darkso-cols, 3);
+    column-gap: var(--darkso-gap, 20px);
+}
+
+.darkso-portfolio--masonry .darkso-portfolio__item {
+    break-inside: avoid;
+    margin-bottom: var(--darkso-gap, 20px);
+}
+
+.darkso-portfolio__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--dk-soft);
+    animation: darksoPop 0.4s ease both;
+}
+
+.darkso-portfolio__item[hidden] {
+    display: none !important;
+}
+
+@keyframes darksoPop {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.darkso-portfolio__link {
+    display: block;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+}
+
+.darkso-portfolio__thumb {
+    display: block;
+    overflow: hidden;
+}
+
+.darkso-portfolio--grid .darkso-portfolio__thumb {
+    aspect-ratio: 1 / 1;
+}
+
+.darkso-portfolio__img,
+.darkso-portfolio__thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.darkso-portfolio--masonry .darkso-portfolio__thumb img {
+    height: auto;
+}
+
+.darkso-portfolio__noimg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+}
+
+.darkso-portfolio__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 4px;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(8, 8, 10, 0.82), rgba(8, 8, 10, 0.05) 68%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.darkso-portfolio__overlay--empty {
+    display: none;
+}
+
+.darkso-portfolio__terms {
+    font-size: 12px;
+    color: #d4d4d8;
+}
+
+.darkso-portfolio__title {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f4f4f5;
+    transform: translateY(8px);
+    transition: transform 0.35s ease;
+}
+
+.darkso-portfolio__item:hover .darkso-portfolio__overlay,
+.darkso-portfolio__link:focus-visible .darkso-portfolio__overlay {
+    opacity: 1;
+}
+
+.darkso-portfolio__item:hover .darkso-portfolio__title {
+    transform: none;
+}
+
+.darkso-portfolio--fx-zoom .darkso-portfolio__item:hover .darkso-portfolio__img,
+.darkso-portfolio--fx-zoom .darkso-portfolio__item:hover .darkso-portfolio__thumb img {
+    transform: scale(1.08);
+}
+
+.darkso-portfolio--fx-always .darkso-portfolio__overlay {
+    opacity: 1;
+}
+
+.darkso-portfolio--fx-always .darkso-portfolio__title {
+    transform: none;
+}
+
+@media (hover: none) {
+    .darkso-portfolio__overlay {
+        opacity: 1;
+    }
+
+    .darkso-portfolio__title {
+        transform: none;
+    }
+}
+
+/* ---------- Lightbox ---------- */
+.darkso-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999998;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px;
+    background: rgba(8, 8, 10, 0.9);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.darkso-lightbox.is-open {
+    opacity: 1;
+}
+
+.darkso-lightbox__img {
+    display: block;
+    max-width: min(94vw, 1400px);
+    max-height: 82vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.darkso-lightbox__caption {
+    margin: 0;
+    color: #e4e4e7;
+    font-size: 14px;
+    text-align: center;
+}
+
+.darkso-lightbox__close {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 18px;
+    inset-inline-end: 18px;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(244, 244, 245, 0.14);
+    color: #f4f4f5;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.darkso-lightbox__close:hover {
+    background: rgba(244, 244, 245, 0.28);
+}
+
+/* ---------- Form ---------- */
+.darkso-form {
+    --darkso-form-gap: 16px;
+    position: relative;
+}
+
+.darkso-form__fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--darkso-form-gap);
+}
+
+.darkso-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 100%;
+    min-width: 0;
+}
+
+.darkso-field--w50 {
+    flex: 0 0 calc(50% - (var(--darkso-form-gap) / 2));
+}
+
+.darkso-field--w33 {
+    flex: 0 0 calc(33.333% - (var(--darkso-form-gap) * 2 / 3));
+}
+
+@media (max-width: 640px) {
+    .darkso-field--w50,
+    .darkso-field--w33 {
+        flex: 1 1 100%;
+    }
+}
+
+.darkso-field__label {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--dk-title);
+}
+
+.darkso-field__label em,
+.darkso-field__check em {
+    color: var(--dk-err);
+    font-style: normal;
+}
+
+.darkso-field__input {
+    width: 100%;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--dk-card-border);
+    border-radius: 10px;
+    background: var(--dk-card-bg);
+    color: var(--dk-title);
+    font: inherit;
+    font-size: 15px;
+    line-height: 1.7;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.darkso-field__input::placeholder {
+    color: var(--dk-meta);
+    opacity: 0.85;
+}
+
+.darkso-field__input:focus {
+    outline: none;
+    border-color: var(--dk-accent);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.22);
+}
+
+textarea.darkso-field__input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.darkso-field__check {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--dk-text);
+    cursor: pointer;
+}
+
+.darkso-field__box {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--dk-accent);
+}
+
+.darkso-form__actions {
+    margin-top: var(--darkso-form-gap);
+}
+
+.darkso-form__submit {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 13px 30px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--dk-accent);
+    color: var(--dk-accent-text);
+    font: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.darkso-form__submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.darkso-form.is-loading .darkso-form__submit {
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.darkso-form__status {
+    display: none;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.darkso-form__status.is-success {
+    display: block;
+    color: var(--dk-ok);
+}
+
+.darkso-form__status.is-error {
+    display: block;
+    color: var(--dk-err);
+}
+
+.darkso-form__hp {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
